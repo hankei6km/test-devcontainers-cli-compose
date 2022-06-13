@@ -1,9 +1,9 @@
 version: '3'
 services:
-  #  node:
-  #    image: 'ghcr.io/hankei6km/h6-dev-containers:node'
-  #    hostname: node
-  #    tty: true
   node:
+    image: 'ghcr.io/hankei6km/h6-dev-containers:node'
+    hostname: node
+    tty: true
+  httpbin:
     image: 'kennethreitz/httpbin:latest'
     hostname: httpbin
