@@ -2,7 +2,7 @@
   "name": "node",
   "dockerComposeFile": "docker-compose.yml",
   "service": "vscode-remote-node",
-  "remoteUser": "node",
+  "remoteUser": "vscode",
   "extensions": ["esbenp.prettier-vscode"],
   "settings": {
     "[typescript]": {
