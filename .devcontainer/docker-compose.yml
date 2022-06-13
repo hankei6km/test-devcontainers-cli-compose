@@ -1,0 +1,9 @@
+version: '3'
+services:
+  vscode-remote-node:
+    image: mcr.microsoft.com/vscode/devcontainers/typescript-node:16-bullseye
+    hostname: node
+    tty: true
+  vscode-remote-httpbin:
+    image: kennethreitz/httpbin:latest
+    hostname: httpbin
