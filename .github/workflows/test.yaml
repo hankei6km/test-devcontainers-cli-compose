@@ -32,9 +32,16 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
 
-      - name: Install modules
-        run: npm install
+      # - name: Install modules
+      #   run: npm install
 
-      # サーバーが上がっていなので、これは失敗する.
-      - name: Run tests
-        run: npm run test
+      # # サーバーが上がっていなので、これは失敗する.
+      # - name: Run tests
+      #   run: npm run test
+
+      - name: Build and run dev container task
+        uses: devcontainers/ci@v0.2
+        with:
+          runCmd: |
+            npm install
+            npm run test
