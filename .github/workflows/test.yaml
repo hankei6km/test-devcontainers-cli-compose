@@ -40,7 +40,7 @@ jobs:
       #   run: npm run test
 
       - name: Build and run dev container task
-        uses: devcontainers/ci@v0.1
+        uses: devcontainers/ci@v0.2
         with:
           imageName: ghcr.io/hankei6km/h6-dev-containers
           #imageTag: node
