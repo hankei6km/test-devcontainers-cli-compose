@@ -1,7 +1,9 @@
 version: '3'
 services:
   vscode-remote-node:
-    image: ghcr.io/hankei6km/h6-dev-containers:node
+    build:
+      context: .
+      dockerfile: Dockerfile
     hostname: node
     tty: true
   vscode-remote-httpbin:
