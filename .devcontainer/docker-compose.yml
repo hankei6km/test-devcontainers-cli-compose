@@ -1,9 +1,9 @@
 version: '3'
 services:
-  vscode-remote-node:
-    image: "ghcr.io/hankei6km/h6-dev-containers:node"
+  node:
+    image: 'ghcr.io/hankei6km/h6-dev-containers:node'
     hostname: node
     tty: true
-  vscode-remote-httpbin:
-    image: "kennethreitz/httpbin:latest"
+  httpbin:
+    image: 'kennethreitz/httpbin:latest'
     hostname: httpbin
