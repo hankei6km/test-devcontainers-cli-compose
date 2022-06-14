@@ -1,9 +1,16 @@
-version: '3'
+version: '3.8'
+
 services:
-  vscode-remote-node:
-    image: ghcr.io/hankei6km/h6-dev-containers:node
+  node:
+    # image: 'ghcr.io/hankei6km/h6-dev-containers:node'
+    build:
+      context: .
+      dockerfile: Dockerfile
     hostname: node
+    user: vscode
+    volumes:
+      - ../:/home/vscode/workspace
     tty: true
-  vscode-remote-httpbin:
-    image: kennethreitz/httpbin:latest
+  httpbin:
+    image: 'kennethreitz/httpbin:latest'
     hostname: httpbin

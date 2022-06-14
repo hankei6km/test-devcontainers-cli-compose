@@ -1,0 +1,29 @@
+name: test_chk
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - '!v*'
+  workflow_dispatch:
+
+jobs:
+  jest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build and run dev container task
+        uses: devcontainers/ci@v0.2
+        continue-on-error: true
+        with:
+          imageName: ghcr.io/hankei6km/h6-dev-containers
+          imageTag: node
+          push: never
+          runCmd: |
+            npm install
+            npm run test
+
+      - name: Print failed files
+        run: cat /tmp/docker-compose/docker-compose.devcontainer.build-*.yml
