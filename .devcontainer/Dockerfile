@@ -1,1 +1,1 @@
-FROM ghcr.io/hankei6km/h6-dev-containers:node 
+FROM ghcr.io/hankei6km/h6-dev-containers:node
