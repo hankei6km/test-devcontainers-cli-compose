@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  node:
+    # image: 'ghcr.io/hankei6km/h6-dev-containers:node'
+    build:
+      context: ./.devcontainer
+      dockerfile: Dockerfile
+    hostname: node
+    user: vscode
+    volumes:
+      - ./:/home/vscode/workspace
+    tty: true
+  httpbin:
+    image: 'kennethreitz/httpbin:latest'
+    hostname: httpbin
