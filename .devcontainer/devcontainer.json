@@ -1,6 +1,6 @@
 {
   "name": "node",
-  "dockerComposeFile": "../docker-compose.yml",
+  "dockerComposeFile": "docker-compose.yml",
   "service": "node",
   "remoteUser": "vscode",
   "workspaceFolder": "/home/vscode/workspace",
