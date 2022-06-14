@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build and run dev container task
-        uses: devcontainers/ci@v0.2.1900000145
+        uses: devcontainers/ci@v0.2
         continue-on-error: true
         with:
           imageName: ghcr.io/hankei6km/h6-dev-containers
