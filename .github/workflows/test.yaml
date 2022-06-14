@@ -9,17 +9,13 @@ jobs:
   jest:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 14.x to run @devcontainers/cli
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.x
 
       - name: Cache node modules
         uses: actions/cache@v2
@@ -43,21 +39,3 @@ jobs:
 
       - name: Run test
         run: devcontainer exec --workspace-folder . npm run test
-
-      # # サーバーが上がっていなので、これは失敗する.
-      # - name: Run tests
-      #   run: npm run test
-
-      # - name: Build and run dev container task
-      #   uses: devcontainers/ci@v0.2
-      #   continue-on-error: true
-      #   with:
-      #     imageName: ghcr.io/hankei6km/h6-dev-containers
-      #     imageTag: node
-      #     push: never
-      #     runCmd: |
-      #       npm install
-      #       npm run test
-
-      # - name: Print failed files
-      #   run: cat /tmp/docker-compose/docker-compose.devcontainer.build-*.yml
