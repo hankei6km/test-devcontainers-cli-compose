@@ -25,5 +25,5 @@ jobs:
             npm install
             npm run test
 
-      - name: Print failed files
-        run: cat /tmp/docker-compose/docker-compose.devcontainer.build-*.yml
+      # - name: Print failed files
+      #   run: cat /tmp/docker-compose/docker-compose.devcontainer.build-*.yml
